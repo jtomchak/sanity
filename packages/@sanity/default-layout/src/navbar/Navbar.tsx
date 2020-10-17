@@ -10,7 +10,7 @@ import {HAS_SPACES} from '../util/spaces'
 import {Branding} from './branding'
 import {LoginStatus} from './loginStatus'
 import {PresenceMenu} from './presenceMenu'
-import {SearchContainer} from './search'
+import {DocumentSearch} from './search'
 import {SanityStatusContainer} from './studioStatus'
 import {ToolMenu} from './toolMenu'
 
@@ -43,7 +43,7 @@ export default function Navbar(props: Props) {
     onSwitchTool,
     onUserLogout,
     onSearchOpen,
-    onSearchClose,
+    // onSearchClose,
     onSetLoginStatusElement,
     onSetSearchElement,
     tools,
@@ -82,31 +82,27 @@ export default function Navbar(props: Props) {
       <div className={styles.createButton}>
         <Tooltip
           disabled={TOUCH_DEVICE}
-          content={
-            (<span className={styles.createButtonTooltipContent}>Create new document</span>) as any
-          }
+          content={<span className={styles.createButtonTooltipContent}>Create new document</span>}
           portal
           // tone="navbar"
         >
-          <div>
-            <Button
-              aria-label="Create"
-              icon="compose"
-              mode="bleed"
-              onClick={onCreateButtonClick}
-              padding={2}
-              selected={createMenuIsOpen}
-              // tone="navbar"
-            />
-          </div>
+          <Button
+            aria-label="Create"
+            icon="compose"
+            mode="bleed"
+            onClick={onCreateButtonClick}
+            padding={3}
+            selected={createMenuIsOpen}
+            // tone="navbar"
+          />
         </Tooltip>
       </div>
       <div className={searchClassName} ref={onSetSearchElement}>
         <div>
-          <SearchContainer
-            shouldBeFocused={searchIsOpen}
-            onOpen={onSearchOpen}
-            onClose={onSearchClose}
+          <DocumentSearch
+          // shouldBeFocused={searchIsOpen}
+          // onOpen={onSearchOpen}
+          // onClose={onSearchClose}
           />
         </div>
       </div>
@@ -123,7 +119,6 @@ export default function Navbar(props: Props) {
           />
         )}
       </div>
-      <div className={styles.extras}>{/* Insert plugins here */}</div>
       <div className={styles.sanityStatus}>
         <SanityStatusContainer />
       </div>

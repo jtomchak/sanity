@@ -30,7 +30,7 @@ function SideMenu(props: Props) {
           <div className={styles.headerMain}>
             <div className={styles.userProfile}>
               <div className={styles.userAvatarContainer}>
-                <UserAvatar size="medium" userId="me" />
+                <UserAvatar size={1} userId="me" />
               </div>
               <div className={styles.userProfileText}>{user?.name || user?.email}</div>
             </div>

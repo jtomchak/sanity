@@ -146,7 +146,7 @@ function DefaultLayout(props: Props) {
             </div>
           )}
 
-          <Navbar tone="contrast">
+          <Navbar>
             <NavbarContainer
               tools={tools}
               createMenuIsOpen={createMenuIsOpen}

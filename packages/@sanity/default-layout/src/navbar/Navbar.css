@@ -110,15 +110,6 @@
   padding: var(--small-padding) var(--extra-small-padding);
 }
 
-.extras {
-  grid-area: extras;
-  display: none;
-
-  @media (--screen-medium) {
-    display: block;
-  }
-}
-
 .search {
   grid-area: search;
 
